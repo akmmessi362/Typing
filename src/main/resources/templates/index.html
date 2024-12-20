@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Test UI</title>
+    <link rel="stylesheet" href="style.css?v=1.0.1">
+    <script src="script.js?v=1.0.1" defer></script>  <!-- Use defer to load JS after HTML parsing -->
+</head>
+<body>
+<div id="container">
+
+    <!-- Result Section (Initially Hidden) -->
+    <div id="result-section" style="display: none;">
+        <div id="result-details" class="result-box"></div>
+    </div>
+
+    <!-- Timer Section -->
+    <div id="timer-section">
+        <div id="clock">00:00</div>
+        <div id="timer-controls">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+    </div>
+
+    <!-- Time Limit Selection -->
+    <div id="time-limit-selector">
+        <label for="time-limit">Choose Time Limit (in minutes): </label>
+        <select id="time-limit" onchange="setTimeLimit()">
+            <option value="1" selected>1 Minute</option>
+            <option value="2">2 Minutes</option>
+            <option value="3">3 Minutes</option>
+            <option value="5">5 Minutes</option>
+        </select>
+    </div>
+
+    <!-- Progress Bar Container -->
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+
+    <!-- Typing Area -->
+    <div id="typing-area-container">
+        <div id="reading-area">This is the text you need to type. Try to type it quickly and accurately.</div>
+        <textarea id="typing-area" placeholder="Start typing here..." oninput="checkTyping()"></textarea>
+    </div>
+
+    <!-- Submit Section -->
+    <div id="submit-section" style="display: block;" > <!-- Initially hidden -->
+        <button id="submit-btn" onclick="submitTest()">Submit</button>
+    </div>
+
+    <!-- Restart Button (Hidden until the test is completed) -->
+    <div id="restart-section" style="display: none;">
+        <button id="restart-btn" onclick="restartTest()">Restart</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

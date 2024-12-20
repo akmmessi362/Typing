@@ -1,0 +1,249 @@
+/* General Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+html, body {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+#container {
+    width: 80%;
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;  /* Ensure container has a minimum height */
+}
+
+/* Timer Section */
+#timer-section {
+    display: flex;
+    margin-top: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Timer Controls */
+#timer-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#timer-controls button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+#clock {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Time Limit Selector */
+#time-limit-selector {
+    margin-bottom: 20px;
+}
+
+/* Progress Bar Container */
+#progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #28a745;
+    border-radius: 5px;
+}
+
+/* Typing and Reading Areas */
+#typing-area-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#reading-area, #typing-area {
+    width: 100%;  /* Ensure both are equal width */
+    box-sizing: border-box;  /* Include padding and border in width */
+    margin-bottom: 20px;
+}
+
+/* Read Section */
+#reading-area {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Typing Area*/
+#typing-area {
+    height: 150px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    resize: none;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+}
+
+#typing-area::-webkit-scrollbar {
+    width: 8px;
+}
+#typing-area::-webkit-scrollbar-thumb {
+    background-color: #007BFF;
+    border-radius: 10px;
+}
+
+
+#typing-area:focus {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}
+
+/* Submit Section */
+#submit-section {
+    text-align: center;
+    margin-top: 20px;
+    display: block; /* Ensure it is always displayed */
+}
+
+#submit-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Restart Section */
+#restart-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#restart-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#restart-btn:hover {
+    background-color: #218838;
+}
+
+/* Result Section */
+#result-section {
+    display: none;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: #343a40;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+}
+
+/* Fancy result box design */
+#result-details {
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    font-size: 18px;
+    color: #f8f9fa;
+}
+
+.result-item {
+    margin-bottom: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #495057;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.result-item:hover {
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.result-item strong {
+    font-weight: 700;
+}
+
+#result-details .result-item:nth-child(1) {
+    background-color: #28a745;
+}
+
+#result-details .result-item:nth-child(2) {
+    background-color: #007bff;
+}
+
+#result-details .result-item:nth-child(3) {
+    background-color: #ffc107;
+}
+
+#result-details .result-item:nth-child(4) {
+    background-color: #17a2b8;
+}
+
+#result-details .result-item:nth-child(5) {
+    background-color: #dc3545;
+}
+
+#result-details .result-item:nth-child(6) {
+    background-color: #6c757d;
+}
+
